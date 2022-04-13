@@ -22,6 +22,15 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
+			state.actions.loadSomeData();
+			state.actions.loadVehicles();
+			state.actions.loadPlanets();
+			state.actions.loadDetailPeople();
+			state.actions.loadDetailPlanets();
+			state.actions.loadDetailVehicles();
+			state.actions.loadFavourites();
+			state.actions.deleteFavourite();
+
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime

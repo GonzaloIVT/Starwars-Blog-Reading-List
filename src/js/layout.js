@@ -4,11 +4,16 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import { Persona } from "./views/persona";
+import { Vehiculo } from "./views/vehiculo";
+import { Planeta } from "./views/planeta";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { CardPersona } from "./component/cardpersona";
+import { CardPlaneta } from "./component/cardplaneta";
+import { CardVehiculo } from "./component/cardvehiculo";
 
 //create your first component
 const Layout = () => {
@@ -17,7 +22,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
@@ -25,11 +30,15 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+
+						<Route exact path="/persona/:idpersona">
+							<Persona />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+						<Route exact path="/planeta/:idplaneta">
+							<Planeta />
+						</Route>
+						<Route exact path="/vehiculo/:idvehiculo">
+							<Vehiculo />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
@@ -43,3 +52,15 @@ const Layout = () => {
 };
 
 export default injectContext(Layout);
+
+/*<Route exact path="/persona">
+							<Persona />
+						</Route>*/
+
+/*<Route exact path="/persona/:idpersona">
+							<Persona />
+							
+								<Route exact path="/persona">
+							<Persona />
+							
+							*/
